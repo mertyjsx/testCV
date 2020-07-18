@@ -26,7 +26,7 @@ function App() {
       <PublicRoute exact path="/login" component={Login} />
       <PublicRoute exact path="/sign-up" component={SignUp} />
       <PublicRoute exact path="/forgot-password" component={ForgotPassword} />
-      <PublicRoute exact path="/verify" component={Verify} />
+      <PublicRoute exact path="/verify/:useremail" component={Verify} />
 
       <Route exact path="/" component={HomePage} />
 

@@ -3,6 +3,20 @@ import Navigation from "./_components/Navigation.page";
 import { Footer } from "./_components/Footer.page";
 import { register } from "./_services/user.service";
 
+// Encrypt
+const cipher = (salt) => {
+  const textToChars = (text) => text.split("").map((c) => c.charCodeAt(0));
+  const byteHex = (n) => ("0" + Number(n).toString(16)).substr(-2);
+  const applySaltToChar = (code) =>
+    textToChars(salt).reduce((a, b) => a ^ b, code);
+
+  return (text) =>
+    text.split("").map(textToChars).map(applySaltToChar).map(byteHex).join("");
+};
+
+// To create a cipher
+const myCipher = cipher("mySecretSalt");
+
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
@@ -27,10 +41,13 @@ class SignUp extends React.Component {
     e.preventDefault();
     this.setState({ loading: true });
 
+    //Then cipher any text:
+    let ciphertext = myCipher(this.state.email);
+
     register(this.state).then(
       (response) => {
         const { from } = {
-          from: { pathname: "/verify", state: { userEmail: this.state.email } },
+          from: { pathname: "/verify/" + ciphertext },
         };
 
         if (response.success) {

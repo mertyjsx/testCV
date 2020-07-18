@@ -19,7 +19,7 @@ class Navigation extends React.Component {
               href="javascript:;"
               onClick={() => this.props.props.history.push("/")}
             >
-              <img src="images/logo.svg" />
+              <img src={process.env.PUBLIC_URL + "/images/logo.svg"} />
             </a>
             <button
               className="navbar-toggler"
