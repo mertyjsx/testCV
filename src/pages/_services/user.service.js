@@ -109,6 +109,9 @@ export const register = (fieldsState) => {
       } else {
         alert(responseData.msg);
       }
+
+      console.log("Response form API ----- ", responseData);
+      
       return responseData;
     })
     .catch((error) => {

@@ -96,14 +96,14 @@ class Navigation extends React.Component {
                   <a
                     href="javascript:;"
                     className="btn btn-purpal"
-                    onClick={() => this.props.props.history.push("login")}
+                    onClick={() => this.props.props.history.push("/login")}
                   >
                     Login
                   </a>
                   <a
                     href="javascript:;"
                     className="btn btn-green"
-                    onClick={() => this.props.props.history.push("sign-up")}
+                    onClick={() => this.props.props.history.push("/sign-up")}
                   >
                     Signup
                   </a>

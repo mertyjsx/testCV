@@ -83,7 +83,7 @@ class SignUp extends React.Component {
                     <input
                       type="email"
                       name="email"
-                      placeholder="User name"
+                      placeholder="Your Email"
                       className="form-control"
                       onChange={this.handleChange}
                       required

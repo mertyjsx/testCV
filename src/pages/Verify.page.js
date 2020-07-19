@@ -55,8 +55,8 @@ class Verify extends React.Component {
     verifyEmail(this.state).then(
       (response) => {
         // IF GETTING RESPONSE TRUE THEN SHOULD BE VERIFY AND REDIRCT
-        if (response.completed) {
-          this.props.history.push("/login");
+        if (response.success) {
+          this.props.history.push("/");
         } else {
           this.setState({ loading: false });
         }
@@ -116,7 +116,7 @@ class Verify extends React.Component {
                       Don't have an account?{" "}
                       <a
                         href="javascript:void(0)"
-                        onClick={() => this.props.history.push("sign-up")}
+                        onClick={() => this.props.history.push("/sign-up")}
                       >
                         Signup
                       </a>

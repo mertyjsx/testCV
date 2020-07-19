@@ -38,7 +38,7 @@ class Login extends React.Component {
       (response) => {
         // IF GETTING RESPONSE TRUE THEN SHOULD BE LOGIN AND REDIRCT
         if (response.success) {
-          this.props.history.push("/");
+          this.props.history.push("/profile");
         } else {
           this.setState({ loading: false });
         }
@@ -70,7 +70,7 @@ class Login extends React.Component {
                     <input
                       type="text"
                       name="username"
-                      placeholder="User name"
+                      placeholder="Your Email"
                       className="form-control"
                       value={username}
                       onChange={this.handleChange}

@@ -65,13 +65,13 @@ class ProfilePage extends React.Component {
                 
                   {
                     (activeMenu === "Personal")?(
-                      <ProfilePersonalViewPage />
-                      // <ProfilePersonalPage />
+                      // <ProfilePersonalViewPage />
+                      <ProfilePersonalPage />
                     ):(activeMenu === "Education")?(
                       <ProfileEducationPage />
                     ):(activeMenu === "Experience")?(
-                      <ProfileExperienceViewPage />
-                      // <ProfileExperiencePage />
+                      // <ProfileExperienceViewPage />
+                      <ProfileExperiencePage />
                     ):(
                       "ELSEEEEEEE.................."
                     )
