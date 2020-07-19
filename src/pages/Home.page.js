@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "./_components/Navigation.page";
 import { Footer } from "./_components/Footer.page";
+import { getToken } from "./_services/user.service";
 
 const $ = window.$;
 
@@ -15,12 +16,12 @@ class HomePage extends React.Component {
 
   // USING BELOW METHOD TO CALL BEFORE RENDER HTML CODE ON WEB
   componentDidMount() {
-    $(window).scroll(function(){
-      var body = $('body'),
-          scroll = $(window).scrollTop();
-    
-      if (scroll >= 50) body.addClass('fixed');
-      else body.removeClass('fixed');
+    $(window).scroll(function () {
+      var body = $("body"),
+        scroll = $(window).scrollTop();
+
+      if (scroll >= 50) body.addClass("fixed");
+      else body.removeClass("fixed");
     });
   }
 
@@ -28,7 +29,7 @@ class HomePage extends React.Component {
     return (
       <div className="warper">
         {/* <!--header-content-here--> */}
-          <Navigation props={this.props} />
+        <Navigation props={this.props} />
         {/* <!--header-content-end--> */}
 
         {/* <!--site-container-start--> */}
@@ -47,9 +48,23 @@ class HomePage extends React.Component {
                   It is a long established fact that a reader will be
                   distracted.
                 </h1>
-                <a href="javascript:;" className="btn btn-purpal" onClick={()=> this.props.history.push("login")}>
-                  Join Now
-                </a>
+                {getToken() ? (
+                  <a
+                    href="javascript:;"
+                    className="btn btn-purpal"
+                    onClick={() => this.props.history.push("/profile")}
+                  >
+                    Profile
+                  </a>
+                ) : (
+                  <a
+                    href="javascript:;"
+                    className="btn btn-purpal"
+                    onClick={() => this.props.history.push("/login")}
+                  >
+                    Join Now
+                  </a>
+                )}
               </article>
               <img src="images/img.svg" />
             </div>
@@ -81,9 +96,24 @@ class HomePage extends React.Component {
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry.
                 </h4>
-                <a href="javascript:;" className="btn btn-white" onClick={()=> this.props.history.push("login")}>
-                  Join Now
-                </a>
+
+                {getToken() ? (
+                  <a
+                    href="javascript:;"
+                    className="btn btn-white"
+                    onClick={() => this.props.history.push("/profile")}
+                  >
+                    Profile
+                  </a>
+                ) : (
+                  <a
+                    href="javascript:;"
+                    className="btn btn-white"
+                    onClick={() => this.props.history.push("/login")}
+                  >
+                    Join Now
+                  </a>
+                )}
               </article>
             </div>
           </div>
@@ -149,7 +179,7 @@ class HomePage extends React.Component {
         {/* <!--site-container-end-->         */}
 
         {/* <!--footer-here--> */}
-          <Footer props={this.props} />
+        <Footer props={this.props} />
         {/* <!--footer-end--> */}
       </div>
     );
