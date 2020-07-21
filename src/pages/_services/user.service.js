@@ -12,7 +12,7 @@ export const getToken = () => {
 
 // remove the token and user from the session storage
 export const logout = () => {
-  if (window.confirm("Are You sure to logout?")) {
+  if (window.confirm("Are you sure you want to logout?")) {
     localStorage.removeItem("user_Id");
     localStorage.removeItem("user_Name");
     localStorage.removeItem("access_token");

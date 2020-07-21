@@ -24,6 +24,7 @@ class ProfilePage extends React.Component {
   }
 
   _handleOnChangeMenu(menuName){
+    // console.log("Menu Name - ", menuName);
     this.setState({ activeMenu: menuName });
   }
 
@@ -66,12 +67,12 @@ class ProfilePage extends React.Component {
                   {
                     (activeMenu === "Personal")?(
                       // <ProfilePersonalViewPage />
-                      <ProfilePersonalPage />
+                      <ProfilePersonalPage profileThis = {this} />
                     ):(activeMenu === "Education")?(
-                      <ProfileEducationPage />
+                      <ProfileEducationPage profileThis = {this} />
                     ):(activeMenu === "Experience")?(
                       // <ProfileExperienceViewPage />
-                      <ProfileExperiencePage />
+                      <ProfileExperiencePage profileThis = {this} />
                     ):(
                       "ELSEEEEEEE.................."
                     )

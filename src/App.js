@@ -18,6 +18,11 @@ import ProfilePage from "./pages/Profile.page";
 import PrivateRoute from "./Route/PrivateRoute";
 import PublicRoute from "./Route/PublicRoute";
 
+// ADMIN PANEL PAGES 
+import AdminDashboard from "./Admin/Dashboard.page";
+import AdminLogin from "./Admin/Login.page";
+
+
 function App() {
   return (
     <Switch>
@@ -28,7 +33,11 @@ function App() {
       <PublicRoute exact path="/forgot-password" component={ForgotPassword} />
       <PublicRoute exact path="/verify/:useremail" component={Verify} />
 
+      
       <Route exact path="/" component={HomePage} />
+
+      <Route exact path="/admin/login" component={AdminLogin} />
+      <Route exact path="/admin/dashboard" component={AdminDashboard} />
 
       <PrivateRoute exact path="/profile" component={ProfilePage} />
 
