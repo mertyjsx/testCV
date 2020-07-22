@@ -35,13 +35,23 @@ class ProfilePersonalPage extends React.Component {
   }
 
   handleChangePublic(e) {
-    const { name, value } = e.target;
+    const { name } = e.target;
     let publicVar = [];
 
+    let existed_item = this.state.public.find(
+      (item) => item === name
+    );
+
+    if(existed_item){
+      let new_items = this.state.public.filter(
+        (item) => item !== name
+      );
+      this.state.public.push(new_items);
+    }else{
+      this.state.public.push(name);
+    }
     
-    
-    
-    // console.log("Public -- ", name, " == ", value);
+    console.log("Public -- ",this.state.public);
     // this.setState({ [name]: value });
   }
 

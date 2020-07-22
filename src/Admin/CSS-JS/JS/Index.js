@@ -1,0 +1,11 @@
+import "../admin-assets/vendors/core/core.js";
+import "../admin-assets/vendors/chartjs/Chart.min.js" ;
+import "../admin-assets/vendors/jquery.flot/jquery.flot.js";
+import "../admin-assets/vendors/jquery.flot/jquery.flot.resize.js";
+import "../admin-assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js";
+import "../admin-assets/vendors/apexcharts/apexcharts.min.js";
+import "../admin-assets/vendors/progressbar.js/progressbar.min.js";
+import "../admin-assets/vendors/feather-icons/feather.min.js";
+import "../admin-assets/js/template.js";
+import "../admin-assets/js/dashboard.js";
+import "../admin-assets/js/datepicker.js";

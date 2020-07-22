@@ -36,7 +36,15 @@ class Navigation extends React.Component {
         </Helmet>
         <header>
           <div className="container">
-            <nav className="navbar navbar-expand-lg">
+            <nav
+              className="navbar navbar-expand-lg"
+              style={{
+                width: "100%",
+                position: "inherit",
+                boxShadow: "none",
+                border: 0,
+              }}
+            >
               <a
                 className="navbar-brand"
                 href="javascript:;"
