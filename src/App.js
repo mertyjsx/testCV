@@ -15,6 +15,8 @@ import HomePage from "./pages/Home.page";
 import ProfilePage from "./pages/Profile.page";
 
 // PUBLIC & PRIVATE ROUTES HANDLING
+import AdminPrivateRoute from "./Route/AdminPrivateRoute";
+import AdminPublicRoute from "./Route/AdminPublicRoute";
 import PrivateRoute from "./Route/PrivateRoute";
 import PublicRoute from "./Route/PublicRoute";
 
@@ -36,8 +38,8 @@ function App() {
       
       <Route exact path="/" component={HomePage} />
 
-      <Route exact path="/admin/login" component={AdminLogin} />
-      <Route exact path="/admin/dashboard" component={AdminDashboard} />
+      <AdminPublicRoute exact path="/admin/login" component={AdminLogin} />
+      <AdminPrivateRoute exact path="/admin/dashboard" component={AdminDashboard} />
 
       <PrivateRoute exact path="/profile" component={ProfilePage} />
 

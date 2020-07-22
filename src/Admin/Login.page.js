@@ -36,17 +36,17 @@ class AdminLogin extends React.Component {
     this.setState({ loading: true });
     this.props.history.push("/admin/dashboard");
 
-    // login(username, password).then(
-    //   (response) => {
-    //     // IF GETTING RESPONSE TRUE THEN SHOULD BE LOGIN AND REDIRCT
-    //     if (response.success) {
-    //       this.props.history.push("/profile");
-    //     } else {
-    //       this.setState({ loading: false });
-    //     }
-    //   },
-    //   (error) => this.setState({ error, loading: false })
-    // );
+    login(username, password).then(
+      (response) => {
+        // IF GETTING RESPONSE TRUE THEN SHOULD BE LOGIN AND REDIRCT
+        if (response.success) {
+          this.props.history.push("/dashboard");
+        } else {
+          this.setState({ loading: false });
+        }
+      },
+      (error) => this.setState({ error, loading: false })
+    );
   }
 
   render() {
